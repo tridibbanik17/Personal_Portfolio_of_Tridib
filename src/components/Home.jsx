@@ -8,6 +8,12 @@ const Home = ({ setCurrentSection }) => {
   const [viewportHeight, setViewportHeight] = React.useState(
     window.innerHeight
   );
+  // Touch devices keep :hover/:whileHover stuck; only hover-animate real pointers
+  const [canHover, setCanHover] = React.useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(hover: hover) and (pointer: fine)").matches
+  );
 
   React.useEffect(() => {
     const handleResize = () => {
@@ -16,7 +22,16 @@ const Home = ({ setCurrentSection }) => {
     };
     setViewportHeight(window.innerHeight);
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+
+    const hoverMq = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const syncHover = () => setCanHover(hoverMq.matches);
+    syncHover();
+    hoverMq.addEventListener("change", syncHover);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      hoverMq.removeEventListener("change", syncHover);
+    };
   }, []);
 
   const links = [
@@ -154,11 +169,19 @@ const Home = ({ setCurrentSection }) => {
               initial={{ opacity: 0, x: 16 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.35 + i * 0.08 }}
-              whileHover={{
-                x: 6,
+              whileHover={
+                canHover
+                  ? {
+                      x: 6,
+                      backgroundColor: "rgba(15, 118, 110, 0.12)",
+                      transition: { duration: 0.12 },
+                    }
+                  : undefined
+              }
+              whileTap={{
+                scale: 0.98,
                 backgroundColor: "rgba(15, 118, 110, 0.12)",
               }}
-              whileTap={{ scale: 0.98 }}
               onClick={() => setCurrentSection(link.id)}
               style={{
                 display: "flex",
@@ -172,6 +195,7 @@ const Home = ({ setCurrentSection }) => {
                 cursor: "pointer",
                 textAlign: "left",
                 width: "100%",
+                WebkitTapHighlightColor: "transparent",
               }}
             >
               <span

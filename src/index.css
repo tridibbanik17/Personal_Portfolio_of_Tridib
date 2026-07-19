@@ -71,10 +71,7 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-button,
-a {
-  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-}
+/* No global transition:all on buttons — sticky touch hover + Framer fight it */
 
 /* Home circuit grid */
 .home-grid {
