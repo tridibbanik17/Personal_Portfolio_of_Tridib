@@ -1,4 +1,4 @@
-# Tridib Banik — Personal Portfolio
+# Tridib Banik: Personal Portfolio
 
 Personal portfolio site for **Tridib Banik**, Software Engineering student at McMaster University. It showcases projects, experience, technical skills, and contact links.
 
@@ -6,19 +6,19 @@ Personal portfolio site for **Tridib Banik**, Software Engineering student at Mc
 
 ## Sections
 
-- **Home** — intro and navigation
-- **About** — background and story
-- **Projects** — selected work (TrafficLightRL, PrepPush, Simulink CI)
-- **Experience** — timeline and technical skills
-- **Contact** — social links and resume
+- **Home:** intro and navigation
+- **About:** background and story
+- **Projects:** selected work (TrafficLightRL, PrepPush, Simulink CI)
+- **Experience:** timeline and technical skills
+- **Contact:** social links and resume
 
 ## Tech stack
 
-- React 19
-- Vite 6
-- React Router
-- Framer Motion
-- Tailwind CSS 4
+- **React 19:** UI library for pages and components
+- **Vite 6:** Dev server and production bundler
+- **React Router:** Page routes like `/about` and `/projects`
+- **Framer Motion:** Animations and page transitions
+- **Tailwind CSS 4:** Utility CSS styling
 
 ## Getting started
 
