@@ -69,6 +69,17 @@ const About = ({ currentSection, setCurrentSection }) => {
       parts: [{ text: "Trilingual: English, Bengali, Hindi" }],
     },
     {
+      icon: "🌍",
+      parts: [
+        { text: "Met at least 1 person from " },
+        {
+          text: "68 different countries",
+          href: "https://docs.google.com/spreadsheets/d/1eQ0XPKDfu-N9BzW8KTMV-KkElQoXqML4/edit?usp=sharing&ouid=113795648261631060006&rtpof=true&sd=true",
+        },
+        { text: ", all in Ontario, Canada, since May 2022" },
+      ],
+    },
+    {
       icon: "🧘",
       parts: [
         {
@@ -81,17 +92,6 @@ const About = ({ currentSection, setCurrentSection }) => {
           href: "https://drive.google.com/file/d/1kOeZIpsOcbl-YkQObOygBIvWA30MCpgI/view?usp=sharing",
         },
         { text: ")" },
-      ],
-    },
-    {
-      icon: "🌍",
-      parts: [
-        { text: "Met at least 1 person from " },
-        {
-          text: "68 different countries",
-          href: "https://docs.google.com/spreadsheets/d/1eQ0XPKDfu-N9BzW8KTMV-KkElQoXqML4/edit?usp=sharing&ouid=113795648261631060006&rtpof=true&sd=true",
-        },
-        { text: ", all in Ontario, Canada, since May 2022" },
       ],
     },
   ];
