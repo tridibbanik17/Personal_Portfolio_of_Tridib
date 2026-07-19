@@ -71,7 +71,10 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-/* Avoid transition:all on buttons/links — it fights Framer Motion hovers */
+button,
+a {
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
 
 /* Home circuit grid */
 .home-grid {
