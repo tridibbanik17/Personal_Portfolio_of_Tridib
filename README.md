@@ -2,7 +2,8 @@
 
 Personal portfolio site for **Tridib Banik**, Software Engineering student at McMaster University. It showcases projects, experience, technical skills, and contact links.
 
-**Live repo:** [github.com/tridibbanik17/Personal_Portfolio_of_Tridib](https://github.com/tridibbanik17/Personal_Portfolio_of_Tridib)
+**Live site:** [tridib.vercel.app](https://tridib.vercel.app)  
+**GitHub repository:** [github.com/tridibbanik17/Personal_Portfolio_of_Tridib](https://github.com/tridibbanik17/Personal_Portfolio_of_Tridib)
 
 ## Sections
 
@@ -14,11 +15,23 @@ Personal portfolio site for **Tridib Banik**, Software Engineering student at Mc
 
 ## Tech stack
 
+**Language**
+- **JavaScript:** language the app is written in (with JSX)
+
+**Framework**
+- **Tailwind CSS 4:** utility-first CSS framework for styling
+
+**Libraries**
 - **React 19:** UI library for pages and components
-- **Vite 6:** Dev server and production bundler
-- **React Router:** Page routes like `/about` and `/projects`
-- **Framer Motion:** Animations and page transitions
-- **Tailwind CSS 4:** Utility CSS styling
+- **React Router:** page routes like `/about`, `/projects`, `/experience`, and `/contact`
+- **Framer Motion:** animations and page transitions
+
+**Tools**
+- **Vite 6:** dev server and production bundler
+- **Vercel:** hosts and deploys the live site
+- **Git:** version control
+- **VS Code:** code editor / IDE
+- **Cursor:** AI-assisted coding in the editor
 
 ## Getting started
 
