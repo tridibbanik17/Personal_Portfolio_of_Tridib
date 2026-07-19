@@ -372,6 +372,8 @@ const About = ({ currentSection, setCurrentSection }) => {
                       scale: 1.01,
                       backgroundColor: "#eef6f3",
                       borderColor: "#0F766E55",
+                      // Override entrance delay — otherwise hover waits ~1s too
+                      transition: { duration: 0.15, delay: 0 },
                     }}
                     style={{
                       display: "flex",
