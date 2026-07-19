@@ -334,8 +334,7 @@ const About = ({ currentSection, setCurrentSection }) => {
             >
               Outside of engineering coursework and projects, I stay curious by
               contributing to research studies, practicing wellness through
-              yoga, and connecting across languages and cultures. Teal
-              underlined text opens proof (spreadsheet, certificate, or report).
+              yoga, and connecting across languages and cultures.
             </motion.p>
 
             <motion.div
