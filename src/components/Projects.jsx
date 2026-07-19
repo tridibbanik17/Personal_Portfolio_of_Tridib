@@ -44,7 +44,8 @@ const Projects = ({ currentSection, setCurrentSection }) => {
   const projects = [
     {
       title: "TrafficLightRL",
-      github: "https://github.com/tridibbanik17/TrafficLightRL",
+      github:
+        "https://github.com/McMasterAI-Society/TrafficLightRL/tree/main/Western#-results",
       conferencePaper:
         "https://drive.google.com/file/d/1n-7jgm9qGarI7IDBWDkTRew6KTPYBkIa/view?usp=sharing",
       video: trafficLightVideo,
