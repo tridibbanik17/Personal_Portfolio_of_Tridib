@@ -157,6 +157,7 @@ const Home = ({ setCurrentSection }) => {
               whileHover={{
                 x: 6,
                 backgroundColor: "rgba(15, 118, 110, 0.12)",
+                transition: { duration: 0.15, ease: "easeOut" },
               }}
               whileTap={{ scale: 0.98 }}
               onClick={() => setCurrentSection(link.id)}
