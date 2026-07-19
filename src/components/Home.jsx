@@ -8,12 +8,6 @@ const Home = ({ setCurrentSection }) => {
   const [viewportHeight, setViewportHeight] = React.useState(
     window.innerHeight
   );
-  // Touch devices keep :hover/:whileHover stuck; only hover-animate real pointers
-  const [canHover, setCanHover] = React.useState(
-    () =>
-      typeof window !== "undefined" &&
-      window.matchMedia("(hover: hover) and (pointer: fine)").matches
-  );
 
   React.useEffect(() => {
     const handleResize = () => {
@@ -22,16 +16,7 @@ const Home = ({ setCurrentSection }) => {
     };
     setViewportHeight(window.innerHeight);
     window.addEventListener("resize", handleResize);
-
-    const hoverMq = window.matchMedia("(hover: hover) and (pointer: fine)");
-    const syncHover = () => setCanHover(hoverMq.matches);
-    syncHover();
-    hoverMq.addEventListener("change", syncHover);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      hoverMq.removeEventListener("change", syncHover);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const links = [
@@ -164,74 +149,55 @@ const Home = ({ setCurrentSection }) => {
           }}
         >
           {links.map((link, i) => (
-            <motion.button
+            <motion.div
               key={link.id}
               initial={{ opacity: 0, x: 16 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.35 + i * 0.08 }}
-              whileHover={
-                canHover
-                  ? {
-                      x: 6,
-                      backgroundColor: "rgba(15, 118, 110, 0.12)",
-                      transition: { duration: 0.12 },
-                    }
-                  : undefined
-              }
-              whileTap={{
-                scale: 0.98,
-                backgroundColor: "rgba(15, 118, 110, 0.12)",
-              }}
-              onClick={() => setCurrentSection(link.id)}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "14px",
-                background: "transparent",
-                border: "none",
-                borderBottom: `1px solid ${theme.teal}22`,
-                borderRadius: "6px",
-                padding: isMobile ? "14px 12px" : "16px 14px",
-                cursor: "pointer",
-                textAlign: "left",
-                width: "100%",
-                WebkitTapHighlightColor: "transparent",
-              }}
             >
-              <span
+              <button
+                type="button"
+                className="home-nav-link"
+                onClick={() => setCurrentSection(link.id)}
                 style={{
-                  fontSize: isMobile ? "1rem" : "1.15rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.06em",
-                  color: theme.copper,
-                  fontFamily: "var(--font-body)",
-                  minWidth: "2.2rem",
+                  padding: isMobile ? "14px 12px" : "16px 14px",
                 }}
               >
-                {link.index}
-              </span>
-              <span
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: isMobile ? "1.55rem" : "1.85rem",
-                  fontWeight: 700,
-                  color: theme.ink,
-                  flex: 1,
-                }}
-              >
-                {link.label}
-              </span>
-              <span
-                style={{
-                  color: theme.teal,
-                  fontSize: "1.25rem",
-                  fontWeight: 500,
-                }}
-                aria-hidden="true"
-              >
-                →
-              </span>
-            </motion.button>
+                <span
+                  style={{
+                    fontSize: isMobile ? "1rem" : "1.15rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.06em",
+                    color: theme.copper,
+                    fontFamily: "var(--font-body)",
+                    minWidth: "2.2rem",
+                  }}
+                >
+                  {link.index}
+                </span>
+                <span
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: isMobile ? "1.55rem" : "1.85rem",
+                    fontWeight: 700,
+                    color: theme.ink,
+                    flex: 1,
+                  }}
+                >
+                  {link.label}
+                </span>
+                <span
+                  style={{
+                    color: theme.teal,
+                    fontSize: "1.25rem",
+                    fontWeight: 500,
+                  }}
+                  aria-hidden="true"
+                >
+                  →
+                </span>
+              </button>
+            </motion.div>
           ))}
         </motion.nav>
       </div>

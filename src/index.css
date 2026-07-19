@@ -71,7 +71,57 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-/* No global transition:all on buttons — sticky touch hover + Framer fight it */
+/* Home nav: CSS hover only on real pointers (avoids sticky multi-highlight on touch) */
+.home-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(15, 118, 110, 0.13);
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.12s ease, transform 0.12s ease;
+}
+
+.home-nav-link:active {
+  background-color: rgba(15, 118, 110, 0.12);
+  transform: scale(0.98);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-nav-link:hover {
+    background-color: rgba(15, 118, 110, 0.12);
+    transform: translateX(6px);
+  }
+
+  .home-nav-link:active {
+    transform: translateX(6px) scale(0.98);
+  }
+}
+
+/* About "Beyond the Code" cards */
+.beyond-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8f9fa;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  cursor: default;
+  transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .beyond-item:hover {
+    background: #eef6f3;
+    border-color: #0f766e55;
+  }
+}
 
 /* Home circuit grid */
 .home-grid {

@@ -358,69 +358,51 @@ const About = ({ currentSection, setCurrentSection }) => {
                 return (
                   <motion.div
                     key={idx}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{
-                      duration: 0.4,
+                      duration: 0.35,
                       delay: 1.2 + idx * 0.1,
-                      type: "spring",
-                      stiffness: 380,
-                      damping: 20,
-                    }}
-                    whileHover={{
-                      y: -3,
-                      scale: 1.01,
-                      backgroundColor: "#eef6f3",
-                      borderColor: "#0F766E55",
-                      // Override entrance delay — otherwise hover waits ~1s too
-                      transition: { duration: 0.15, delay: 0 },
-                    }}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "10px",
-                      background: "#f8f9fa",
-                      padding: "12px 16px",
-                      borderRadius: "12px",
-                      border: "1px solid #e9ecef",
-                      cursor: "default",
+                      ease: "easeOut",
                     }}
                   >
-                    <span style={{ fontSize: "1.2rem" }}>{interest.icon}</span>
-                    <span
-                      style={{
-                        fontSize: "0.9rem",
-                        fontWeight: "500",
-                        color: "#333",
-                      }}
-                    >
-                      {interest.parts.map((part, partIdx) =>
-                        part.href ? (
-                          <a
-                            key={partIdx}
-                            href={part.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            title="Opens in a new tab"
-                            style={linkStyle}
-                          >
-                            {part.text}
-                            <span
-                              style={{
-                                fontSize: "0.75em",
-                                marginLeft: "2px",
-                                opacity: 0.85,
-                              }}
-                              aria-hidden="true"
+                    <div className="beyond-item">
+                      <span style={{ fontSize: "1.2rem" }}>{interest.icon}</span>
+                      <span
+                        style={{
+                          fontSize: "0.9rem",
+                          fontWeight: "500",
+                          color: "#333",
+                        }}
+                      >
+                        {interest.parts.map((part, partIdx) =>
+                          part.href ? (
+                            <a
+                              key={partIdx}
+                              href={part.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              title="Opens in a new tab"
+                              style={linkStyle}
                             >
-                              ↗
-                            </span>
-                          </a>
-                        ) : (
-                          <span key={partIdx}>{part.text}</span>
-                        )
-                      )}
-                    </span>
+                              {part.text}
+                              <span
+                                style={{
+                                  fontSize: "0.75em",
+                                  marginLeft: "2px",
+                                  opacity: 0.85,
+                                }}
+                                aria-hidden="true"
+                              >
+                                ↗
+                              </span>
+                            </a>
+                          ) : (
+                            <span key={partIdx}>{part.text}</span>
+                          )
+                        )}
+                      </span>
+                    </div>
                   </motion.div>
                 );
               })}
