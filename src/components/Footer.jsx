@@ -62,13 +62,15 @@ const Footer = ({ currentSection, setCurrentSection }) => {
             return (
               <motion.button
                 key={link.path}
+                type="button"
                 onClick={() => setCurrentSection(link.path)}
                 whileHover={{
-                  scale: 1.05,
+                  scale: 1.06,
                   y: -2,
                   color: "#14B8A6",
+                  transition: { type: "spring", stiffness: 380, damping: 20 },
                 }}
-                whileTap={{ scale: 0.95 }}
+                whileTap={{ scale: 0.97 }}
                 style={{
                   background: isActive
                     ? "rgba(255, 255, 255, 0.2)"
@@ -80,7 +82,6 @@ const Footer = ({ currentSection, setCurrentSection }) => {
                   cursor: "pointer",
                   fontSize: "1rem",
                   fontWeight: "500",
-                  transition: "all 0.3s ease",
                   backdropFilter: "blur(10px)",
                 }}
               >
@@ -105,11 +106,12 @@ const Footer = ({ currentSection, setCurrentSection }) => {
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{
-              scale: 1.05,
-              y: -3,
+              scale: 1.06,
+              y: -2,
               boxShadow: "0 10px 30px rgba(15, 118, 110, 0.3)",
+              transition: { type: "spring", stiffness: 380, damping: 20 },
             }}
-            whileTap={{ scale: 0.95 }}
+            whileTap={{ scale: 0.97 }}
             style={{
               background: "linear-gradient(135deg, #0F766E, #B45309)",
               borderRadius: "30px",
@@ -121,7 +123,6 @@ const Footer = ({ currentSection, setCurrentSection }) => {
               display: "flex",
               alignItems: "center",
               gap: "12px",
-              transition: "all 0.3s ease",
               boxShadow: "0 8px 25px rgba(15, 118, 110, 0.22)",
               border: "2px solid rgba(255, 255, 255, 0.1)",
             }}
