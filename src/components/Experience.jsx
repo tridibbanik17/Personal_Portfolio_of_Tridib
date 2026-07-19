@@ -118,7 +118,7 @@ const Experience = ({ currentSection, setCurrentSection }) => {
       duration: "Aug 2026 – Apr 2027",
       startMonth: 23,
       endMonth: 31,
-      shortLabel: "IA",
+      shortLabel: "IAI",
       achievements: [
         "Will help instruct 1000+ first-year engineering students",
       ],
@@ -135,7 +135,7 @@ const Experience = ({ currentSection, setCurrentSection }) => {
       endMonth: 31,
       shortLabel: "EcoCAR",
       achievements: [
-        "Joining connected & automated vehicle software for ADAS work",
+        "Joining the connected & automated vehicle software team for ADAS work",
       ],
       technologies: ["C++", "Computer Vision", "ADAS", "CAN"],
       color: "#fa709a",
