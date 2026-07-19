@@ -1,12 +1,40 @@
-# React + Vite
+# Tridib Banik — Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site for **Tridib Banik**, Software Engineering student at McMaster University. It showcases projects, experience, technical skills, and contact links.
 
-Currently, two official plugins are available:
+**Live repo:** [github.com/tridibbanik17/Personal_Portfolio_of_Tridib](https://github.com/tridibbanik17/Personal_Portfolio_of_Tridib)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Sections
 
-## Expanding the ESLint configuration
+- **Home** — intro and navigation
+- **About** — background and story
+- **Projects** — selected work (TrafficLightRL, PrepPush, Simulink CI)
+- **Experience** — timeline and technical skills
+- **Contact** — social links and resume
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech stack
+
+- React 19
+- Vite 6
+- React Router
+- Framer Motion
+- Tailwind CSS 4
+
+## Getting started
+
+```bash
+npm install
+npm run dev
+```
+
+App runs at [http://localhost:5173](http://localhost:5173).
+
+```bash
+npm run build    # production build → dist/
+npm run preview  # preview production build
+npm run lint     # ESLint
+```
+
+## Deploy
+
+Configured for Vercel (`vercel.json` SPA rewrites). `public/_redirects` is included for static hosts that need SPA fallback routing.
