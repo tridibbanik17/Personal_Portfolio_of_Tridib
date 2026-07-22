@@ -141,6 +141,22 @@ const Experience = ({ currentSection, setCurrentSection }) => {
       color: "#fa709a",
       incoming: true,
     },
+    {
+      title: "Incoming MATLAB Student Ambassador",
+      company: "MathWorks · McMaster University",
+      location: "Hamilton, Ontario",
+      duration: "Sep 2026 – Apr 2027",
+      startMonth: 24,
+      endMonth: 31,
+      shortLabel: "MATLAB",
+      achievements: [
+        "Will host campus events and workshops demonstrating MATLAB and Simulink",
+        "Will promote MathWorks Student Challenges and learning resources via campus channels and Instagram",
+      ],
+      technologies: ["MATLAB", "Simulink", "Technical Communication", "Event Planning"],
+      color: "#E87722",
+      incoming: true,
+    },
   ];
 
   const education = [
